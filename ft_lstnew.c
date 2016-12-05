@@ -6,7 +6,7 @@
 /*   By: ykolomie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 18:49:20 by ykolomie          #+#    #+#             */
-/*   Updated: 2016/12/01 19:54:27 by ykolomie         ###   ########.fr       */
+/*   Updated: 2016/12/05 10:38:32 by ykolomie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		res->content = malloc(content_size);
 		if (!res->content)
+		{
+			free(res);
 			return (NULL);
+		}
 		ft_memcpy(res->content, content, content_size);
 		if (!res->content)
 			return (NULL);

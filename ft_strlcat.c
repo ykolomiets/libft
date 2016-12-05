@@ -6,7 +6,7 @@
 /*   By: ykolomie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 22:19:31 by ykolomie          #+#    #+#             */
-/*   Updated: 2016/11/30 22:46:01 by ykolomie         ###   ########.fr       */
+/*   Updated: 2016/12/05 10:29:54 by ykolomie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dest_size = 0;
 	while (dst[dest_size] != '\0' && dest_size < size)
 		dest_size++;
-	src_size = 0;
 	src_size = ft_strlen(src);
 	old_size = dest_size;
 	while (src[dest_size - old_size] != '\0' && dest_size < size - 1)
