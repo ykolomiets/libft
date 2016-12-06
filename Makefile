@@ -6,7 +6,7 @@
 #    By: ykolomie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 20:24:37 by ykolomie          #+#    #+#              #
-#    Updated: 2016/12/05 09:47:48 by ykolomie         ###   ########.fr        #
+#    Updated: 2016/12/06 17:33:14 by ykolomie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,4 +94,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all
+re: clean all
