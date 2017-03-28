@@ -6,7 +6,7 @@
 #    By: ykolomie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 20:24:37 by ykolomie          #+#    #+#              #
-#    Updated: 2016/12/06 17:33:14 by ykolomie         ###   ########.fr        #
+#    Updated: 2017/01/28 17:25:07 by ykolomie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,15 +78,15 @@ SRC =	ft_memset.c		\
 OBJ = $(SRC:.c=.o)
 INC = -I libft.h
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -c
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 		   ar rcs $(NAME) $(OBJ)
 
-%o.: %.c libft.h
-	$(CC) $(FLAGS) $(INC) $< -o $@
+%.o: %.c libft.h
+	$(CC) $(FLAGS) $(INC) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
