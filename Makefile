@@ -6,7 +6,7 @@
 #    By: ykolomie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 20:24:37 by ykolomie          #+#    #+#              #
-#    Updated: 2018/10/17 21:15:29 by ykolomie         ###   ########.fr        #
+#    Updated: 2018/10/17 21:25:55 by ykolomie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@ INC_DIR :=		./includes
 OBJ_DIR :=		./obj
 
 HEADERS :=		libft.h			\
+				printf_core.h					\
+				dragon4.h						\
+				big_int.h						\
+				float_to_integer_conversion.h	
 
 HEADERS_DEP :=	$(addprefix $(INC_DIR)/, $(HEADERS))
 
@@ -82,7 +86,52 @@ SRC :=			ft_memset.c		\
 				ft_strupcase.c	\
 				ft_strlowcase.c	\
 				ft_atoi_base.c	\
-				ft_count_word.c	
+				ft_count_word.c	\
+				ft_ceil.c		\
+
+
+PRINTF_SRC :=	ft_printf.c						\
+				ft_dprintf.c					\
+				ft_snprintf.c					\
+				ft_vdprintf.c					\
+				ft_vsnprintf.c					\
+				wchartobuf.c					\
+				printf_core.c					\
+				flags.c							\
+				length.c						\
+				precision.c						\
+				length_modifier.c				\
+				specifier.c						\
+				print_integer_part1.c			\
+				print_integer_part2.c			\
+				print_integer_part3.c			\
+				print_float_part1.c	    		\
+				print_float_part2.c	    		\
+				print_percent.c					\
+				print_char.c					\
+				print_string.c					\
+				print_pointer.c					\
+				print_none_specifier.c			\
+				print_left_adjust.c             \
+				log_base_2.c					\
+				big_int.c						\
+				big_int_power_of_10.c			\
+				big_int_addition.c				\
+				big_int_multiplication.c		\
+				big_int_multiplication_by_int.c	\
+				big_int_exponentiation.c		\
+				big_int_division.c				\
+				big_int_shift_left.c			\
+				float64_to_integer_conversion.c	\
+				dragon4_core.c					\
+				dragon4_core_start_value.c      \
+				dragon4_core_rounding.c         \
+				dragon4_format_positional.c		\
+				dragon4_format_scientific.c		\
+				dragon4_print_float64.c			\
+				dragon4_print_inf_nan.c			\
+
+SRC +=			$(PRINTF_SRC)
 
 OBJ =			$(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
@@ -111,6 +160,7 @@ fclean: clean
 
 re: clean all
 
-vpath %.c		$(SRC_DIR)	
+vpath %.c		$(SRC_DIR)	\
+				$(SRC_DIR)/printf	
 
 .PHONY: all check clean fclean re

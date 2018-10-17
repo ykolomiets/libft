@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdarg.h>
+
+# define IS_DIGIT(x) ((x) >= '0' && (x) <= '9')
 
 typedef struct	s_list
 {
@@ -91,5 +94,13 @@ void			ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+double			ft_ceil(double d);
+
+int 			ft_printf(const char *restrict fmt, ...);
+int 			ft_dprintf(const int fd, const char *restrict fmt, ...);
+int 			ft_snprintf(char *buf, const int size, const char *restrict fmt, ...);
+int 			ft_vdprintf(const int fd, const char *restrict fmt, va_list *ap);
+int 			ft_vsnprintf(char *buf, const int size, const char *restrict fmt, va_list *ap);
 
 #endif
